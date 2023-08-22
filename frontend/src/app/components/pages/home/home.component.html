@@ -1,0 +1,25 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<ul>
+  <li *ngFor="let book of books">
+    <a routerLink="/book/{{ book.id }}">
+      <img [src]="book.imageUrl" [alt]="book.name" />
+      <div class="content">
+        <div class="name">
+          <h3>{{ book.name}}</h3>
+          <span class=" favorite {{ book.favorite ? '' : 'not' }} ">❤</span>
+
+          <div class="stars">
+            <app-star-rating [stars]="book.stars"></app-star-rating>
+          </div>
+
+          <div class="price">
+            <span>
+              {{ book.price | currency : "KZT" }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

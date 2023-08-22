@@ -1,0 +1,68 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  & a {
+    height: 22.5rem;
+    width: 20rem;
+    border: 1px solid whitesmoke;
+    border-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: #0060a0;
+
+    &:hover {
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    img {
+      object-fit:contain;
+      height: 15rem;
+    }
+
+    .content {
+      margin-top: 0.3rem;
+      padding: 1rem;
+      position: relative;
+      height: 7rem;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #111111;
+      }
+
+      .favorite {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        font-size: 1.2rem;
+        color: #e72929;;
+
+        &.not {
+          color: gray;
+        }
+      }
+
+      .stars {
+        margin-bottom: 0.2rem;
+      }
+
+      .price {
+        position: absolute;
+        bottom: 5;
+        left: 0.9rem;
+        background: white;
+        padding: 0.3rem 100% 0 0;
+        color: #414141;
+        margin-top: 0.7rem;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}

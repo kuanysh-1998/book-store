@@ -1,0 +1,74 @@
+header {
+  position: relative;
+  background: #0060a0;
+  padding: 0;
+  border-bottom: 1px solid #ffffff;
+
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+
+      &:hover {
+        background: #ffffff;
+        color: #0060a0;
+        height: 62px;
+        cursor: pointer;
+      }
+    }
+
+    .logo {
+      font-weight: bold;
+      padding: 1rem;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+
+      & a {
+        padding: 1rem;
+        display: inline-block;
+
+        & span {
+          background: #ffffff;
+          color: #0060a0;
+          padding: 0.1rem 0.45rem;
+          border-radius: 100rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    &__menu {
+      position: relative;
+
+      &:hover .menu {
+        display: block;
+      }
+
+      .menu {
+        position: absolute;
+        z-index: 1;
+        background: #ffffff;
+        display: none;
+
+        & a {
+          width: 100%;
+          min-width: 8rem;
+          color: #0060a0;
+          font-size: 1.1rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
