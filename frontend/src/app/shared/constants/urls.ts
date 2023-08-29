@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:5000';
+export const BASE_URL = 'http://localhost:5001';
 
 export const BOOKS_URL = BASE_URL + '/api/books';
 export const BOOKS_TAGS_URL = BOOKS_URL + '/tags';

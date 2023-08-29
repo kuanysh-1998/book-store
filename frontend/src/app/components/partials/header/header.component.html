@@ -4,7 +4,7 @@
 
     <nav>
       <ul>
-        <li >
+        <li>
           <a routerLink="/login">Войти</a>
         </li>
 
@@ -18,7 +18,7 @@
         </li>
         <li>
           <a routerLink="/cart-page">
-            Корзина <span > 8 </span>
+            Корзина <span *ngIf="cartQuantity"> {{ cartQuantity }} </span>
           </a>
         </li>
       </ul>

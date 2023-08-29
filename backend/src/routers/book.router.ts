@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { sample_books, sample_tags } from "../data";
+import { sample_books} from "../data";
 import asyncHandler from "express-async-handler";
 import { BookModel } from './../models/book.model';
 const router = Router();
@@ -8,7 +8,7 @@ router.get(
   "/seed",
   asyncHandler(async (req, res) => {
     const booksCount = await BookModel.countDocuments();
-    if (booksCount > 0) {
+    if (booksCount > 1) {
       res.send("Seed is already done!");
       return;
     }

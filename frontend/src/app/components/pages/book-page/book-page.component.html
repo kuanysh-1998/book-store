@@ -1,3 +1,9 @@
+<app-not-found
+  [visible]="!book"
+  notFoundMessage="Книга не найдена!"
+  resetLinkText="Перейти на главную страницу!"
+></app-not-found>
+
 <div *ngIf="book" class="container">
   <img [src]="book.imageUrl" [alt]="book.name" />
 
@@ -24,22 +30,16 @@
       </span>
     </div>
 
-    <button>Add To Cart</button>
+    <button (click)="addToCart()">Add To Cart</button>
   </div>
 </div>
 
-<div class="description">
+<div *ngIf="book" class="description">
   <h3>Характеристики</h3>
 
   <ul>
-    <li>
-      Автор - {{ book?.description?.author }}
-    </li>
-    <li>
-      Год издания - {{ book?.description?.publishYear }}
-    </li>
-    <li>
-      Жанр - {{ book?.description?.genre }}
-    </li>
+    <li>Автор - {{ book.description?.author }}</li>
+    <li>Год издания - {{ book.description?.publishYear }}</li>
+    <li>Жанр - {{ book.description?.genre }}</li>
   </ul>
 </div>

@@ -24,16 +24,18 @@ export class CartService {
   }
 
   removeFromCart(bookId: string): void {
-    this.cart.items.filter((item) => item.book.id !== bookId);
+    this.cart.items = this.cart.items.filter((item) => item.book.id !== bookId);
 
     this.setCartToLocalStorage();
   }
 
   changeQuantity(bookId: string, quantity: number): void {
-    let cartItem = this.cart.items.find((item) => item.book.id === bookId);
+    let cartItem = this.cart.items.find((cart) => cart.book.id === bookId);
     if (!cartItem) return;
 
     cartItem.quantity = quantity;
+    cartItem.price = quantity * cartItem.book.price;
+
     this.setCartToLocalStorage();
   }
 

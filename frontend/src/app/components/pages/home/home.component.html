@@ -1,12 +1,17 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found
+  [visible]="!books || !books.length"
+  resetLinkText="Сбросить поиск"
+  notFoundMessage="Ничего не найдено!"
+></app-not-found>
 <ul>
   <li *ngFor="let book of books">
     <a routerLink="/book/{{ book.id }}">
       <img [src]="book.imageUrl" [alt]="book.name" />
       <div class="content">
         <div class="name">
-          <h3>{{ book.name}}</h3>
+          <h3>{{ book.name }}</h3>
           <span class=" favorite {{ book.favorite ? '' : 'not' }} ">❤</span>
 
           <div class="stars">

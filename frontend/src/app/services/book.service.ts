@@ -37,7 +37,7 @@ export class BookService {
 
   getBookById(bookId: string): Observable<Book> {
     return this.http.get<Book>(BOOKS_BY_ID_URL + bookId).pipe(
-      catchError(error => {
+      catchError((error) => {
         console.error('An error occurred:', error);
         return throwError('An error occurred while fetching the book.');
       })
