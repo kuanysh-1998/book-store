@@ -4,16 +4,16 @@
 
     <nav>
       <ul>
-        <li>
+        <li *ngIf="!user.token">
           <a routerLink="/login">Войти</a>
         </li>
 
-        <li class="container__menu">
-          <a routerLink="/dashboard"> dashboard </a>
+        <li class="container__menu" *ngIf="user.token">
+          <a routerLink="/dashboard"> {{ user.name }} </a>
           <div class="menu">
             <a>Profile</a>
             <a>Orders</a>
-            <a>Logout</a>
+            <a (click)="logout()">Logout</a>
           </div>
         </li>
         <li>

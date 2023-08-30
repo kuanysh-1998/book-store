@@ -4,36 +4,31 @@
 
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
       <div class="input-container">
-        <label>Email</label>
-        <div>
+        <input-container label="Email">
           <input type="email" formControlName="email" placeholder="Email" />
-        </div>
-
-        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
-          <div *ngIf="fc.email.errors.required">
-            Поле Email не должно быть пустым!
+          <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+            <div *ngIf="fc.email.errors.required">
+              Поле Email не должно быть пустым!
+            </div>
+            <div *ngIf="fc.email.errors.email">
+              Неправильный адрес электронной почты!
+            </div>
           </div>
-          <div *ngIf="fc.email.errors.email">
-            Неправильный адрес электронной почты!
-          </div>
-        </div>
+        </input-container>
       </div>
-      <div class="input-container">
-        <label>Пароль</label>
-        <div>
-          <input
-            type="password"
-            formControlName="password"
-            placeholder="Password"
-          />
-        </div>
 
+      <input-container label="Пароль">
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Password"
+        />
         <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
           <div *ngIf="fc.password.errors.required">
             Поле Пароль не должно быть пустым!
           </div>
         </div>
-      </div>
+      </input-container>
       <div class="button">
         <button type="submit">Войти</button>
       </div>
