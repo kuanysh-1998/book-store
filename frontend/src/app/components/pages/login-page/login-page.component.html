@@ -6,7 +6,7 @@
       <text-input
         [control]="fc.email"
         [showErrorsWhen]="isSubmitted"
-        type="password"
+        type="email"
         label="Email"
       ></text-input>
 
@@ -17,7 +17,12 @@
         label="Password"
       ></text-input>
 
-      <default-button type="submit" text="Login"></default-button>
+      <default-button type="submit" text="Войти"></default-button>
+
+      <div class="register">
+        Новый Пользователь? &nbsp;
+        <a routerLink="/register">Зарегистрироваться</a>
+      </div>
     </form>
   </div>
 </div>

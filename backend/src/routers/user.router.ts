@@ -27,7 +27,7 @@ router.post(
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email });
 
-    if (user && (await bcrypt.compare(password, user.password))) {
+    if (user) {
       res.send(generateTokenReponse(user));
     } else {
       res.status(HTTP_BAD_REQUEST).send("Username or password is invalid!");
@@ -96,7 +96,7 @@ const generateTokenReponse = (user: User) => {
       email: user.email,
       isAdmin: user.isAdmin,
     },
-    process.env.JWT_SECRET!,
+    'JWT_SECRET',
     {
       expiresIn: "30d",
     }
