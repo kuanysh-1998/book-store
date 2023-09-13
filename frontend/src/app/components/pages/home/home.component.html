@@ -1,5 +1,11 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<input type="task"> <button>add</button>
+<div *ngFor="let task of tasks" >
+
+<p>{{ task.task1 }}</p>
+<p> {{ task.localTime }} </p>
+</div>
 <app-not-found
   [visible]="!books || !books.length"
   resetLinkText="Сбросить поиск"

@@ -6,6 +6,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/partials/header/header.component';
@@ -21,6 +24,7 @@ import { InputContainerComponent } from './components/partials/input-container/i
 import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { DefaultButtonComponent } from './components/partials/default-button/default-button.component';
+import { CitySelectionModalComponent } from './components/partials/city-selection-modal-component/city-selection-modal-component.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,7 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
     InputValidationComponent,
     TextInputComponent,
     DefaultButtonComponent,
+    CitySelectionModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +52,7 @@ import { DefaultButtonComponent } from './components/partials/default-button/def
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',

@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <h4 class="modal-title">Выберите город</h4>
+  <button type="button" class="close" aria-label="Close" (click)="dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <ul>
+    <li *ngFor="let city of cities">
+      <button (click)="selectCity(city)">{{ city }}</button>
+    </li>
+  </ul>
+  <button (click)="dismiss()">Закрыть</button>
+</div>
+
+<!-- <div class="modal">
+  <div class="modal-content">
+    <h2>Выберите город</h2>
+    <ul>
+      <li *ngFor="let city of cities">
+        <button (click)="selectCity(city)">{{ city }}</button>
+      </li>
+    </ul>
+    <button (click)="dismiss()">Закрыть</button>
+  </div>
+</div> -->
